@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+  MathJax = {
+    tex: {
+      tags: 'all'  // should be 'ams', 'none', or 'all'
+    }
+  };
+  </script>
+    <head>
+        <title>Studna</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header align = "center">
+            Studnička
+        </header>
+        <main>
+            <section>
+                <p>
+            <h2>3 + 1 Splitting </h2>
+                <h1>Motivation</h1>
+                    We can get insight into the Einstein's equations by considering the traditional initial value (Cauchy) problem. Consider that we are give \(g_{\mu\nu}\) and \(\partial g_{\mu\nu}/\partial x^0\) everywhere on the "plane" \(x^0=t\). If we could find from this the second partial derivatives \( \partial^2 g_{\mu\nu}/\partial (x^0)^2\) at some \(x^0 = t\) we could then compute \(g_{\mu\nu}\) everywhere. 
+                </p>
+                 <h1>Spacetime foliation -- needs a graph</h1>
+                 <p>   
+                 We assume that we have such a space-time, that is <b>foliated by a smooth family of space-like hypersurfaces</b> \(\Sigma_t\), where \(t\) denotes some continuous parameter
+                    <ul>
+                        <li>The notion of <i>hypersurface</i> is some (n-1) smooth submanifold </li>
+                        <li>Space-time foliation means that every event in such a space-time belongs to exactly one hypersurface \(\Sigma_t\)</li>
+                    </ul>
+                    We choose \(n^\mu\) to be <i>future oriented unit normal</i> to \(\Sigma_t\). Since each hypersurface corresponds to \(t=const\) the normal has to read 
+                        \[n_\alpha := -N \frac{\partial t}{\partial x^\alpha},\]  
+                    where \(N\) is the normalization factor usually called the <b>lapse</b>. 
+                    We also introduce the tangent field to the direction of time 
+                        \[t^\mu = \frac{\partial x^\mu}{t}.\label{eqt}\]
+                    Clearly it follows
+                        \[n_\alpha t^\alpha = N.\]
+                    If we introduce the projection of \(t^\mu\) on \(\Sigma_t\) (usually called the <b>shift</b>)
+                        \[N^\mu := (\delta^\mu _\alpha + n^\mu n_\mu)t^\alpha =: {h^\mu}_\alpha t^\alpha .\]
+                    \(h_{\mu\nu}\) acts as the metric of \(\Sigma_t\).
+                    </p>
+                    <P>
+                    We now consider a congruence of curves \(\gamma\) intersecting the hypersurface \(\Sigma_t\) and we use \(t = t(x^\alpha)\) and parameter of these curves. 
+                    By this construction the \eqref{eqt} is always tangent to the congruence. A particular curve (\gamma_p\) defines a mapping from a point \(P\) on \(\Sigma_t\) to a point \(P'\) on \(\Sigma_t'\) and further on for all \(t\). To fix the coordinates on \(P'\) and \(P''\), given some intrinsic coordinates \(y^\alpha(P)\) on \(\Sigma_t\), we simply impose \(y^\alpha(P'')=y^\alpha(P')=y^\alpha(P)\). figure 4.2 poisson
+                    <br>
+                    
+                    This construction defines a coordinate system \((t,y^\alpha)\). From the originaly used system \(x^\alpha = x^\alpha(t,y^a)\)
+                    From here we can write \[dx^\mu = \frac{\partial x^\mu}{\partial t}dt + \frac {\partial x^\mu}{\partial y^m}dy^m.\]
+                    Rewriting \(t^\mu = N n^\mu + N^\mu \) we get 
+                        \[ds^2 = -N^2 dt^2 + h_{m n}(N^m dt + dy^m)(N^n dt + dy^n).\]
+                    and by <a href = https://mathworld.wolfram.com/SylvestersDeterminantIdentity.html>Sylvester's determinant identity</a>
+                        \[\sqrt{-g} = N \sqrt{h}\]
+                    Lastly if we have adapted coordinates \(x^0 = t\) and \(x^i\) covering \(\Sigma_t\), in which case we have \(x^i = \delta^i_m y^m\).
+                    </p>
+                <p>
+                    <h1>Meaning of lapse and shift -- unfinished and acceleration of the hypersurface-orthogonal field</h1>
+                    If we introduce proper time and the four velocity we have
+                    \[\frac{dx^\mu}{d \tau}= \frac{d x^mu}{dt}\frac{dt}{d\tau}\] = 
+                </p>
+                <p>
+                    <h1>Extrinsic curvature</h1>
+                    Our motivation for the foliation was solving the Cauchy problem, but we assumed to basically known our space-time already, since we assumed to know the foliation everywhere. It is better to consider the evolution of the spatial geometry \(h_{ik}\) on a certain hypersurface $\Sigma$. So now we describe the intrinsic geometry of such a hypersurface by the metric \(h_{ik}(t)\), such metric is also called the <b>first fundamental form</b>. If we want to compute the of \(h_{ik}(t)\) according to Einstein equations the inital conditions must also include the time derivative \(h_{ik,t}\), but that is clearly non-tensorial! 
+                    <br>
+                    The suitable tensor turns out to be the <a href = nevim> expansion tensor</a> \(\Theta_{\mu\nu}\)
+                        \[\Theta_{\mu\nu} = h^\alpha_\mu h^\beta_\nu n_{(\alpha ; \beta)}=  = =\frac{1}{2} \mathcal{L}_n h_{\mu\nu}\]
+                    This part I don't get, something about symmetry but anyway it leads to
+                        \[K_{\mu \nu} := n_{\alpha;\beta} h^\alpha_\mu h^\beta_\nu = \frac{1}{2}\mathcal{L}_n h_{\mu\nu},\]
+                    which is called the <b>extrinsic curvature</b> or <b>the second fundamental form</b>. This form lives on \(\Sigma_t\) and so 
+                    \[h_{mu\nu}n^nu = 0, \; \alpha_\mu n^\mu = 0, \; K_{\mu \nu}n^\nu = 0, \; K:= h^{\mu nu}K_{\mu\nu} = {n^\mu}_{;\nu} \label{eq:eq}\]
+
+                    Since \(h_{\mu \nu}\) describes the intrisic geometry of the hypersurface, \(K_{\mu\nu}\) describes the curvature of the hypersurface as a submanifold for a given manifold.<br> The definition of \(K_{\mu\nu}\) would be zero if the covector \(n_\mu\) would be parallel transported along \(h^\alpha_{\nu}\), hence it describes how much it points to different directions along \(\Sigma_t\).
+                    The trace \(K\) has also a clear geometrical sense: it is \(>0\) when \(\Sigma\) is convex and \( < 0 \) \(\Sigma\) is concave.
+                   <br>
+
+                    
+                </p>
+
+                <p>
+                    <h1>Covariant derivative on hypersurface</h1>
+                    
+                    Projection by the \(h^\alpha_\beta\) tensor ensures a unique and geometry transition between the tensor living in a space-time and those linving on the hypersurface \(\Sigma\). But would we define a "gradient" that keeps such tensor "purely spatial"?
+
+                    We define a covariant derivative corresponding to the Levi-Civita connection of a the metric as 
+                        \[ {T^{\mu\dots}}_{\alpha \dots | \rho} :={T^{\nu\dots}}_{\beta\dots;\sigma}h^\mu_\nu \dots h^\beta_\alpha \dots h^\sigma_\rho \]
+                    
+                    Levi-Civita connecting need to be a covariant derivate, needs "annihilate" the metric and has to have zero torsion. All of theese are easily proven.
+
+                </p>
+                <p>
+                    <h1> Decomposition of curvature</h1>
+                    This whole part is traight out copied from OS text.
+                    <br>
+
+                    Using analogy with our definition of Riemann tensor we can define the "3D Riemann tensor"
+                        \[V_{\nu|\kappa \lambda} - V_{\nu | \lambda \kappa} = {}^{(3)}{R^\mu}_{\nu \kappa \lambda} V_\mu\]
+                    where \(V_\mu\) is an arbitrary covertor field on \(\Sigma\) (\(V_\mu n^\mu = 0\)).
+
+    
+                    \begin{aligned}
+                    & V_{\nu \mid \kappa \lambda} \equiv\left(V_{\mu ; \gamma} h_\nu^\mu h_\kappa^\gamma\right)_{\mid \lambda} \equiv\left(V_{\mu ; \gamma} h_\alpha^\mu h_\rho^\gamma\right)_{; \sigma} h_\nu^\alpha h_\kappa^\rho h_\lambda^\sigma= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma+V_{\mu ; \gamma} h_{\alpha ; \sigma}^\mu h_\kappa^\gamma h_\nu^\alpha h_\lambda^\sigma+V_{\mu ; \gamma} h_\nu^\mu h_{\rho ; \sigma}^\gamma h_\kappa^\rho h_\lambda^\sigma= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma+V_{\mu ; \gamma}\left(n_{; \sigma}^\mu n_\alpha+n^\mu n_{\alpha ; \sigma}\right) h_\kappa^\gamma h_\nu^\alpha h_\lambda^\sigma+V_{\mu ; \gamma} h_\nu^\mu\left(n_{; \sigma}^\gamma n_\rho+n^\gamma n_{\rho ; \sigma}\right) h_\kappa^\rho h_\lambda^\sigma= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma+V_{\mu ; \gamma} n^\mu n_{\alpha ; \sigma} h_\kappa^\gamma h_\nu^\alpha h_\lambda^\sigma+V_{\mu ; \gamma} h_\nu^\mu n^\gamma n_{\rho ; \sigma} h_\kappa^\rho h_\lambda^\sigma= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma+V_{\mu ; \gamma} n^\mu h_\kappa^\gamma K_{\nu \lambda}+V_{\mu ; \gamma} h_\nu^\mu n^\gamma K_{\kappa \lambda}= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma-V_\mu n^\mu{ }_{; \gamma} h_\kappa^\gamma K_{\nu \lambda}+V_{\mu ; \gamma} h_\nu^\mu n^\gamma K_{\kappa \lambda}= \\
+                    & =V_{\mu ; \gamma \sigma} h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma-V_\mu K_\kappa^\mu K_{\nu \lambda}+V_{\mu ; \gamma} h_\nu^\mu n^\gamma K_{\kappa \lambda} \text {, } \\
+                    &
+                    \end{aligned}
+                
+                from where
+                    \begin{aligned}
+                    { }^{(3)} R^\mu{ }_{\nu \kappa \lambda} V_\mu:=V_{\nu \mid \kappa \lambda}-V_{\nu \mid \lambda \kappa} & =V_{\mu ; \gamma \sigma} h_\nu^\mu\left(h_\kappa^\gamma h_\lambda^\sigma-h_\lambda^\gamma h_\kappa^\sigma\right)-V_\mu\left(K_\kappa^\mu K_{\nu \lambda}-K_\lambda^\mu K_{\nu \kappa}\right)= \\
+                    & =\left(V_{\mu ; \gamma \sigma}-V_{\mu ; \sigma \gamma}\right) h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma-V_\mu\left(K_\kappa^\mu K_{\nu \lambda}-K_\lambda^\mu K_{\nu \kappa}\right)= \\
+                    & =R_{\mu \gamma \sigma}^\alpha V_\alpha h_\nu^\mu h_\kappa^\gamma h_\lambda^\sigma-V_\mu\left(K_\kappa^\mu K_{\nu \lambda}-K_\lambda^\mu K_{\nu \kappa}\right)= \\
+                    & =\left(R^\mu{ }_{\beta \gamma \delta} h_\nu^\beta h_\kappa^\gamma h_\lambda^\delta-K_\kappa^\mu K_{\nu \lambda}+K_\lambda^\mu K_{\nu \kappa}\right) V_\mu .
+                    \end{aligned}
+                Since \(V_\mu\), such relation hold on any projected covector.
+                This equation relates the riemann tensor of the hypersurface to the "purely spatial" projection of the Riemann tensor. It's known as the <b>Gauss equation</b> 
+
+                The Riemann tensor can be projecter in two other ways, \(\left(R^\alpha{ }_{\beta \gamma \delta} n_\alpha h_\nu^\beta h_\kappa^\gamma h_\lambda^\delta\right) \) and \(\left(R_{\beta \gamma \delta}^\alpha n_\alpha h_\nu^\beta n^\gamma h_\lambda^\delta\right)\)
+                <br>
+               From these we get the <b>Codazzi equation</b> 
+              \[ R_{\beta \gamma \delta}^\alpha n_\alpha h_\nu^\beta h_\kappa^\gamma h_\lambda^\delta=\left(K_{\beta \gamma ; \delta}-K_{\beta \delta ; \gamma}\right) h_\nu^\beta h_\kappa^\gamma h_\lambda^\delta \equiv K_{\nu \kappa \mid \lambda}-K_{\nu \lambda \mid \kappa}\]
+              and the <b>Ricci equation</b>
+              \[{R^\alpha}_{\beta \gamma\ \delta} n_\alpha h^\beta_\nu n^\gamma h^\delta_\lambda = a_{\nu | \lambda} + a_{\nu}a_\lambda + K_{\nu \gamma} K^\gamma_\lambda - \mathcal{L}_n K_{\nu \lambda} .\]
+              
+                </p>
+             <p>
+                <h1>Decomposition of the Ricci tensor</h1>
+              \[  R_{\beta \delta}:=g^{\alpha \gamma} R_{\alpha \beta \gamma \delta}=h^{\alpha \gamma} R_{\alpha \beta \gamma \delta}-n^\alpha n^\gamma R_{\alpha \beta \gamma \delta}=h^{\mu \kappa} R_{\alpha \beta \gamma \delta} h_\mu^\alpha h_\kappa^\gamma-n^\alpha n^\gamma R_{\alpha \beta \gamma \delta} .\]
+
+                From where we instantly get
+
+              \begin{aligned}
+                & R_{\beta \delta} h_\nu^\beta h_\lambda^\delta={ }^{(3)} R_{\nu \lambda}+K K_{\nu \lambda}-a_{\nu \mid \lambda}-a_\nu a_\lambda+h_\nu^\beta h_\lambda^\delta K_{\beta \delta ; \gamma} n^\gamma, \\
+                & R_{\beta \delta} n^\beta h_\lambda^\delta=K_{\lambda \mid \kappa}^\kappa-K_{\mid \lambda} .
+              \end{aligned}
+              the last equation is 
+              \begin{aligned}
+                R_{\alpha \gamma} n^\alpha n^\gamma=a_{\mid \lambda}^\lambda+a^\lambda a_\lambda-K_\gamma^\lambda K_\lambda^\gamma-h^{\beta \delta} K_{\beta \delta ; \gamma} n^\gamma & =a_{; \delta}^\delta-K_\gamma^\lambda K_\lambda^\gamma-K_{, \gamma} n^\gamma= \\
+                & =a_{; \delta}^\delta+K_\gamma^\lambda K_\lambda^\gamma-h^{\nu \lambda} £_{\mathbf{n}} K_{\nu \lambda} .
+                \end{aligned}
+            </p>
+            <p>
+                <h1>Decomposition of the Ricci scalar</h1>
+                \begin{aligned}
+                 R & \equiv g^{\beta \delta} R_{\beta \delta}=h^{\beta \delta} R_{\beta \delta}-n^\beta n^\delta R_{\beta \delta}=h^{\nu \lambda} R_{\beta \delta} h_\nu^\beta h_\lambda^\delta-R_{\alpha \gamma} n^\alpha n^\gamma= \\
+                & =h^{\mu \kappa} h^{\nu \lambda} R_{\alpha \beta \gamma \delta} h_\mu^\alpha h_\nu^\beta h_\kappa^\gamma h_\lambda^\delta-2 R_{\alpha \gamma} n^\alpha n^\gamma
+                \end{aligned}
+                
+                And using previous equations
+
+                \begin{aligned}
+                    R  & ={ }^{(3)} R+K^2+K_{\nu \gamma} K^{\nu \gamma}-2 a_{; \delta}^\delta+2 K_{, \gamma} n^\gamma= \\
+                    & ={ }^{(3)} R+K^2-K_{\nu \kappa} K^{\nu \kappa}-2 R_{\alpha \gamma} n^\alpha n^\gamma .
+                \end{aligned}
+
+            This is a generalization of the <a href = "https://en.wikipedia.org/wiki/Theorema_Egregium"> Theorema Egregium</a>. It link the entrinsic properties of \(Sigma\) characterized by \(K_{\mu \nu}\), to it's intrisic properties represented by the 3D Ricci scalar.
+            
+                
+            </p>
+            <p>
+                <h1>Decomposition of the Einstein tensor</h1>
+                include screenshot
+            
+            
+            </p>
+            <p>
+                <h1>Decomposition of Einstein equations to contraints and evolution equations</h1>
+            We can now decompose the Einstein equations, we get the <b>momentum and Hamiltonian constraints</b>
+            \[K^\kappa_{\lambda|\kappa}-K_{| \lambda} = 8 \pi T_{\beta \gamma} n^\beta h^\gamma_\lambda (\equiv -8 \pi j_\lambda )\]
+           \[{}^{(3)}R + K^2 - K_{\mu \nu}K^{\mu \nu} = 16 \pi T_{\alpha \gamma} n^\alpha n^\gamma + 2 \Lambda (\equiv 16\pi \rho + 2 \Lambda)\] 
+                
+                All the quantities on the LHS are bound to \(\Sigma\), without involving any information about their evolution, so these are constraints. Evolution can most easily be reached by submitting the other form of the field equation 
+           
+
+            </p>
+            
+            <br>
+            <br>
+            <br>
+                </section>
+            </main>
+        <footer>
+        </footer>
+    </body>
+</html>
+
