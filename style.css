@@ -450,10 +450,10 @@ dl dd {
 /* Sidenotes */
 
 .sidenote {
-  font-size: 0.8rem;
+  font-size: 1rem;
   float: right;
   clear: right;
-  width: 18vw;
+  width: 10vw;
   margin-right: -20vw;
   margin-bottom: 1em;
   text-indent: 0;
@@ -461,7 +461,7 @@ dl dd {
 
 .sidenote.left {
   float: left;
-  margin-left: -20vw;
+  margin-left: -12vw;
   margin-bottom: 1em;
   text-indent: 0;
 }
@@ -666,3 +666,24 @@ header:after    {
     display:block;
     border:1px solid black;
 }
+
+footer:before {
+  content:' ';
+  display:block;
+  border:1px solid black;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+.abosulte{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+} 
