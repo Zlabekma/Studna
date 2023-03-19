@@ -212,6 +212,7 @@
                 .
                 \label{eq19}
                 \end{aligned}
+                This equation is also called the \emph{Raychaudhuri equation}, this describes the evolution of expansion of the vector field $n^\mu$.
                 </p>
                 <p>
                 <h2>Decomposition of the Ricci scalar</h2>
@@ -238,13 +239,23 @@
                 </p>
                 <p>
                 <h2>Decomposition of the Einstein tensor</h2>
-                include screenshot
+                This is just combining know terms
+                $$
+                    G_{\beta \delta} h^beta_\nu h^\delta_\lambda = R_{\beta \delta} h^\beta_\nu h^\delta_\lambda - R/2 h_\nu \lambda = {}^{(3)} G_{\nu \lambda} + K K_{\mu \lambda} - a_{\nu | \lambda}- a_\nu a_\lambda ; h^\beta_\nu h^\delta_\lambda K_{\beta \delta ; \gamma} n^\gamma - \frac{1}{2} \left( K^2 + K_{\beta \gamma}K^{\beta \gamma} - 2 a^\delta_{; \delta} + 2 K_{,\gamma}n^\gamma \right)h_{\nu \lambda}
+                $$
+                $$
+                G_{\beta \delta} n^\beta h^\delta_\lambda = K^\kappa_{\lambda| \kappa} - K_{| \lambda}
+                $$
+                $$
+                G_{\alpha \gamma}n^\alpha n^\gamma = \frac{1}{2}({}^{(3)} R + K^2 - K_{\mu \gamma}K^{\mu \gamma})
+                $$
 
+            
 
                 </p>
                 <p>
-                <h2>Decomposition of Einstein equations to contraints and evolution equations</h1>
-                We can now decompose the Einstein equations, we get the <b>momentum and Hamiltonian constraints</b>
+                <h2>Decomposition of Einstein equations to constraints and evolution equations</h1>
+                We can now decompose the Einstein equations \(G_{\mu \nu} = 8 \pi T_{\mu \nu} - \Lambda g_{\mu \nu}\), we get the <b>momentum and Hamiltonian constraints</b>
                 \[K^\kappa_{\lambda|\kappa}-K_{| \lambda} = 8 \pi T_{\beta \gamma} n^\beta h^\gamma_\lambda (\equiv -8
                 \pi j_\lambda )\]
                 \[{}^{(3)}R + K^2 - K_{\mu \nu}K^{\mu \nu} = 16 \pi T_{\alpha \gamma} n^\alpha n^\gamma + 2 \Lambda
@@ -255,7 +266,7 @@
                 <br>
                 Evolution can most easily be reached by submitting the other form of the field equation
                 </p>    
-                    \[R_{\beta \delta} =  8 \pi T_{\beta \delta} - \frac{1}{2}T g_{\beta \delta} + \Lambda g_{\delta \beta}\] to the "hh-projection" of Ricci \ref{eq:19} (19).
+                    \[R_{\beta \delta} =  8 \pi T_{\beta \delta} - \frac{1}{2}T g_{\beta \delta} + \Lambda g_{\delta \beta}\] to the "hh-projection" of Ricci (19).
                 \[
                 {}^{(3)} R_{\nu \lambda} + K K_{\nu \lambda} - a_{\nu | \lambda}- a_\nu a_\lambda + h^\beta_\nu h^\delta_\lambda K_{\beta \delta;\gamma}n^\gamma = 8 \pi T_{\beta\delta}h^\beta_\nu h^\delta_\lambda + (\Lambda - 4 \pi T)h_{\mu \nu}
                 \label{eqabove}
@@ -280,7 +291,7 @@
                 $$
                 and so 
                 $$
-                \mathcal{L}_t K{\mu \nu} = N \left[a_{\mu | \lambda} \ a_\mu a_\lambda - K K_{\mu \lambda} + 2 K_{\nu \gamma} K^\gamma_\lambda - {}^{(3)} R_{\mu \lambda} + 8 \pi T_{\beta \delta} h^\beta_\nu h^\delta_\lambda + (\Lambda - 4 \pi T) h_{\mu \lambda} \right] + \mathcal{L}_N K_{\mu \lambda}
+                \mathcal{L}_t K_{\mu \nu} = N \left[a_{\mu | \lambda} \ a_\mu a_\lambda - K K_{\mu \lambda} + 2 K_{\nu \gamma} K^\gamma_\lambda - {}^{(3)} R_{\mu \lambda} + 8 \pi T_{\beta \delta} h^\beta_\nu h^\delta_\lambda + (\Lambda - 4 \pi T) h_{\mu \lambda} \right] + \mathcal{L}_N K_{\mu \lambda}
                 $$
 
             Further we could employ the adapted coordinates, but only a few equations simplify significantly.
